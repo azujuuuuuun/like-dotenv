@@ -1,5 +1,7 @@
 # like-dotenv
 
+[![CI Workflow](https://github.com/azujuuuuuun/like-dotenv/actions/workflows/ci.yml/badge.svg)](https://github.com/azujuuuuuun/like-dotenv/actions/workflows/ci.yml)
+
 Something like dotenv.
 
 ## References
