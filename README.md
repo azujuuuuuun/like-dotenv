@@ -4,6 +4,30 @@
 
 Something like dotenv.
 
+## Usage
+
+Please create a `.env` file like below.
+
+```sh
+# This is a comment.
+SAMPLE_KEY1=SAMPLE_VALUE1
+SAMPLE_KEY2="SAMPLE_VALUE2"
+```
+
+You can call `like_dotenv::config()` like below.
+
+```rs
+use std::env;
+
+fn main() {
+    like_dotenv::config().unwrap();
+
+    for (key, value) in env::vars() {
+        println!("{key}: {value}");
+    }
+}
+```
+
 ## References
 
 - https://github.com/motdotla/dotenv
