@@ -2,7 +2,7 @@
 
 [![CI Workflow](https://github.com/azujuuuuuun/like-dotenv/actions/workflows/ci.yml/badge.svg)](https://github.com/azujuuuuuun/like-dotenv/actions/workflows/ci.yml)
 
-Something like dotenv.
+Something like dotenv. Like-dotenv loads the key/value pairs from `.env` file, and sets them to environment variables.
 
 ## Usage
 
