@@ -24,6 +24,12 @@ fn main() {
 
     for (key, value) in env::vars() {
         println!("{key}: {value}");
+        /*
+            Output:
+                SAMPLE_KEY1: SAMPLE_VALUE1
+                SAMPLE_KEY2: SAMPLE_VALUE2
+                ...other environment variables
+        */
     }
 }
 ```
