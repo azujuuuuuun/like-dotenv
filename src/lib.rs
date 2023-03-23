@@ -4,24 +4,24 @@ pub fn config() -> Result<(), Box<dyn Error>> {
     let path = if cfg!(test) { ".env.test" } else { ".env" };
     let result: String = fs::read_to_string(path)?.parse()?;
 
-    for line in result.split("\n").into_iter() {
+    for line in result.split('\n') {
         let trimmed_line = line.trim();
 
         if trimmed_line.is_empty() {
             continue;
         }
 
-        if trimmed_line.starts_with("#") {
+        if trimmed_line.starts_with('#') {
             continue;
         }
 
-        let splitted = trimmed_line.split("=").collect::<Vec<_>>();
+        let splitted = trimmed_line.split('=').collect::<Vec<_>>();
         let key = splitted[0];
         let mut value = splitted[1..].join("");
-        if value.starts_with("\"") && value.ends_with("\"") {
+        if value.starts_with('\"') && value.ends_with('\"') {
             value = value
-                .trim_start_matches("\"")
-                .trim_end_matches("\"")
+                .trim_start_matches('\"')
+                .trim_end_matches('\"')
                 .to_string();
         }
 
