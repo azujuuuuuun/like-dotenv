@@ -1,7 +1,8 @@
 use std::{env, error::Error, fs};
 
 pub fn config() -> Result<(), Box<dyn Error>> {
-    let result: String = fs::read_to_string(".env")?.parse()?;
+    let path = if cfg!(test) { ".env.test" } else { ".env" };
+    let result: String = fs::read_to_string(path)?.parse()?;
 
     for line in result.split("\n").into_iter() {
         let trimmed_line = line.trim();
